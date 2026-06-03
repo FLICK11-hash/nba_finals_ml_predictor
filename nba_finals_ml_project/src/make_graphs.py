@@ -8,10 +8,11 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.model_selection import LeaveOneOut
 from sklearn.metrics import accuracy_score
+from pathlib import Path
 
-
-DATA_PATH = "../data/finals_metrics.csv"
-OUTPUT_DIR = "../data"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DATA_PATH = PROJECT_ROOT / "data" / "nba_finals_1980_2026.csv"
+OUTPUT_DIR = PROJECT_ROOT / "data"
 
 
 FEATURES = [
@@ -19,7 +20,7 @@ FEATURES = [
     "drtg",
     "seed",
     "wins",
-    "mvp5",
+    "mvp6",
     "dpoy5",
     "allstars",
     "finals5",
@@ -27,6 +28,7 @@ FEATURES = [
     "threept_pct",
     "twopt_pct",
     "ft_pct",
+    "star_injury_flag"
 ]
 
 
@@ -73,7 +75,7 @@ def save_model_comparison_graph():
         plt.text(i, value + 0.02, f"{value:.1%}", ha="center")
 
     plt.tight_layout()
-    plt.savefig(os.path.join(OUTPUT_DIR, "model_accuracy_comparison.png"))
+    plt.savefig(OUTPUT_DIR / "model_accuracy_comparison.png")
     plt.close()
 
 
@@ -112,52 +114,39 @@ def save_logistic_coefficients_graph(matchups):
     )
 
 
-def save_correct_vs_wrong_graph(matchups):
-    feature_cols = [col for col in matchups.columns if col.endswith("_diff")]
+def save_correct_vs_wrong_graph():
+    wrong_path = PROJECT_ROOT / "outputs" / "leave_one_year_out_wrong_predictions.csv"
 
-    X = matchups[feature_cols]
-    y = matchups["label"]
+    if not wrong_path.exists():
+        print("WARNING: outputs/wrong_predictions.csv not found.")
+        print("Run python src/train_models.py first.")
+        return
 
-    model = Pipeline([
-        ("scaler", StandardScaler()),
-        ("svm", SVC(kernel="linear", probability=True))
-    ])
+    wrong = pd.read_csv(wrong_path)
 
-    loo = LeaveOneOut()
+    completed_years = list(range(1976, 2026))
+    results = pd.DataFrame({
+        "year": completed_years,
+        "correct": 1
+    })
 
-    results = []
-
-    for train_idx, test_idx in loo.split(X):
-        X_train, X_test = X.iloc[train_idx], X.iloc[test_idx]
-        y_train, y_test = y.iloc[train_idx], y.iloc[test_idx]
-
-        model.fit(X_train, y_train)
-        pred = model.predict(X_test)[0]
-
-        row = matchups.iloc[test_idx[0]]
-
-        results.append({
-            "year": row["year"],
-            "correct": int(pred == y_test.iloc[0]),
-        })
-
-    results_df = pd.DataFrame(results)
+    svm_wrong = wrong[wrong["model"] == "linear_svm"]["year"].tolist()
+    results.loc[results["year"].isin(svm_wrong), "correct"] = 0
 
     plt.figure(figsize=(12, 4))
-    plt.scatter(results_df["year"], results_df["correct"])
+    plt.scatter(results["year"], results["correct"])
     plt.title("Linear SVM Leave-One-Year-Out Results")
     plt.xlabel("Finals Year")
     plt.ylabel("Correct Prediction")
     plt.yticks([0, 1], ["Wrong", "Correct"])
     plt.tight_layout()
-    plt.savefig(os.path.join(OUTPUT_DIR, "linear_svm_correct_by_year.png"))
+    plt.savefig(OUTPUT_DIR / "linear_svm_correct_by_year.png")
     plt.close()
 
-    results_df.to_csv(
-        os.path.join(OUTPUT_DIR, "linear_svm_correct_by_year.csv"),
+    results.to_csv(
+        OUTPUT_DIR / "linear_svm_correct_by_year.csv",
         index=False
     )
-
 
 def save_2026_prediction_graph():
     models = ["Logistic Regression", "Linear SVM"]
@@ -205,7 +194,7 @@ def main():
 
     save_model_comparison_graph()
     save_logistic_coefficients_graph(matchups)
-    save_correct_vs_wrong_graph(matchups)
+    save_correct_vs_wrong_graph()
     save_2026_prediction_graph()
     save_feature_distribution_graph(df)
 

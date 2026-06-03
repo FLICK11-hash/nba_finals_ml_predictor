@@ -2,15 +2,17 @@
 from pathlib import Path
 import pandas as pd
 
+DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "nba_finals_1980_2026.csv"
+
 FEATURES = [
-    "ortg", "drtg", "seed", "wins", "mvp5", "dpoy5", "allstars",
+    "ortg", "drtg", "seed", "wins", "mvp6", "dpoy5", "allstars",
     "finals5", "titles5", "threept_pct", "twopt_pct", "ft_pct",
+    "star_injury_flag"
 ]
 
 
 def main() -> None:
-    path = Path("data/nba_finals_1980_2026.csv")
-    df = pd.read_csv(path, skip_blank_lines=True)
+    df = pd.read_csv(DATA_PATH, skip_blank_lines=True)
     df["champion"] = pd.to_numeric(df["champion"], errors="coerce")
 
     print("Rows:", len(df))
@@ -33,6 +35,12 @@ def main() -> None:
         print("OK: 2026 champion labels are blank")
     else:
         print("WARNING: 2026 has champion labels filled in")
+
+    missing_cols = [col for col in FEATURES if col not in df.columns]
+    if missing_cols:
+        print("\nMissing columns:")
+        print(missing_cols)
+        return
 
     missing = df[FEATURES].isna().sum()
     print("\nMissing feature values:")
