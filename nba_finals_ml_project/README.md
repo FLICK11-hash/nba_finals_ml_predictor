@@ -1,8 +1,111 @@
+Skip to content
+FLICK11-hash
+nba_finals_ml_predictor
+Repository navigation
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security and quality
+Insights
+Settings
+Files
+Go to file
+t
+T
+data
+finals_metrics.csv
+nba_finals_ml_project
+README.md
+nba_finals_ml_project.zip
+nba_finals_ml_predictor
+/
+README.md
+in
+main
+
+Edit
+
+Preview
+Indent mode
+
+Spaces
+Indent size
+
+2
+Line wrap mode
+
+Soft wrap
+Editing README.md file contents
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
 # NBA Finals Prediction Project
 
 This project uses machine learning to predict the winner of an NBA Finals matchup using only regular-season team statistics and historical team context.
 
 The dataset contains every NBA Finals participant from **1976 through 2026**, with completed Finals from **1976–2025** used for training and evaluation, and the **2026 Finals** used as the prediction target.
+
+Google Doc with more info: https://docs.google.com/document/d/1L8kt1vHJa6QDTG3yOV-TY1N2zEWm12QQ4AQ5OHoaA90/edit?usp=sharing
 
 ## Dataset
 
@@ -56,131 +159,6 @@ The 2026 champion field remains blank and is used only for prediction.
 ## Key Modeling Choice
 
 The model does not train on individual team rows.
-
-Instead, each NBA Finals is converted into a single matchup:
-
-```text
-Team A features - Team B features
-```
-
-The target label is:
-
-```text
-1 if Team A won the Finals
-0 if Team B won the Finals
-```
-
-This approach forces the model to learn the relative strengths of two Finals teams rather than memorizing characteristics of champions.
-
-## Training and Evaluation
-
-Train/Test Split:
-
-```text
-1976–2015 = Training Set
-2016–2025 = Test Set
-2026 = Prediction Only
-```
-
-In addition to the standard train/test split, the project performs:
-
-```text
-Leave-One-Year-Out Validation (LOYO)
-```
-
-For LOYO validation, each Finals is held out once, the model is trained on all remaining Finals, and a prediction is made on the held-out year.
-
-This provides a more robust estimate of model performance on small datasets.
-
-## Models
-
-Current models:
-
-* Logistic Regression
-* Linear SVM
-
-Additional models such as Random Forest and RBF SVM were tested during development but ultimately underperformed compared to the simpler linear models.
-
-## Results
-
-Current Leave-One-Year-Out Accuracy (1976–2025):
-
-```text
-Logistic Regression: 48 / 50 (96.0%)
-Linear SVM:          48 / 50 (96.0%)
-```
-
-Heuristic baseline (pick team with more wins):
-
-```text
-36 / 50 (72.0%)
-```
-
-The only missed Finals were:
-
-```text
-2001 Lakers vs 76ers
-2016 Warriors vs Cavaliers
-```
-
-Both are historically unusual Finals outcomes relative to regular-season team profiles.
-
-## 2026 Prediction
-
-Using regular-season data from both finalists:
-
-```text
-San Antonio Spurs
-vs
-New York Knicks
-```
-
-Both Logistic Regression and Linear SVM predict:
-
-```text
-San Antonio Spurs
-```
-
-to win the 2026 NBA Finals.
-
-## Running the Project
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Audit the dataset:
-
-```bash
-python src/audit_data.py
-```
-
-Train models and generate predictions:
-
-```bash
-python src/train_models.py
-```
-
-## Outputs
-
-Generated files are saved to:
-
-```text
-outputs/
-```
-
-Important outputs include:
-
-* `model_summary.csv`
-* `prediction_2026.csv`
-* `matchup_dataset.csv`
-* `logistic_regression_coefficients.csv`
-* `linear_svm_coefficients.csv`
-
-## Disclaimer
-
-This project is intended as an exploratory machine learning study of NBA Finals outcomes.
-
-Although the models achieve strong historical accuracy, the dataset contains only 50 completed Finals matchups. Results should therefore be interpreted as an interesting statistical analysis rather than a guaranteed prediction system.
+Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
+No file chosen
+Attach files by dragging & dropping, selecting or pasting them.
