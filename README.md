@@ -4,6 +4,8 @@ This project uses machine learning to predict the winner of an NBA Finals matchu
 
 The dataset contains every NBA Finals participant from **1976 through 2026**, with completed Finals from **1976–2025** used for training and evaluation, and the **2026 Finals** used as the prediction target.
 
+Google Doc with more info: https://docs.google.com/document/d/1L8kt1vHJa6QDTG3yOV-TY1N2zEWm12QQ4AQ5OHoaA90/edit?usp=sharing
+
 ## Dataset
 
 Input file:
