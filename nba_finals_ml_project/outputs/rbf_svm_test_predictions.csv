@@ -1,0 +1,11 @@
+year,team_a,team_b,winner,model,actual_team_a_won,raw_predicted_team_a_won,final_predicted_team_a_won,prob_team_a_wins,dominance_override_used,predicted_winner
+2016,Warriors,Cavaliers,Cavaliers,rbf_svm,0,1,1,0.8840246872598538,True,Warriors
+2017,Warriors,Cavaliers,Warriors,rbf_svm,1,1,1,0.8960874100121327,True,Warriors
+2018,Warriors,Cavaliers,Warriors,rbf_svm,1,1,1,0.8526044554258911,True,Warriors
+2019,Warriors,Raptors,Raptors,rbf_svm,0,0,0,0.13156387248467463,False,Raptors
+2020,Lakers,Heat,Lakers,rbf_svm,1,1,1,0.935660436256715,False,Lakers
+2021,Suns,Bucks,Bucks,rbf_svm,0,0,0,0.2653540505188274,False,Bucks
+2022,Warriors,Celtics,Warriors,rbf_svm,1,1,1,0.8785918406947217,False,Warriors
+2023,Nuggets,Heat,Nuggets,rbf_svm,1,1,1,0.8379138229444016,False,Nuggets
+2024,Mavericks,Celtics,Celtics,rbf_svm,0,0,0,0.08402099897528516,True,Celtics
+2025,Thunder,Pacers,Thunder,rbf_svm,1,1,1,0.9441452494640628,True,Thunder

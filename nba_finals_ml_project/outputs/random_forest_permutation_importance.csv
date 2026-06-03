@@ -1,0 +1,14 @@
+feature,permutation_importance_mean,permutation_importance_std
+ortg_diff,0.0,0.0
+seed_diff,0.0,0.0
+mvp6_diff,0.0,0.0
+allstars_diff,0.0,0.0
+dpoy5_diff,0.0,0.0
+threept_pct_diff,0.0,0.0
+twopt_pct_diff,0.0,0.0
+finals5_diff,0.0,0.0
+titles5_diff,0.0,0.0
+ft_pct_diff,0.0,0.0
+star_injury_flag_diff,0.0,0.0
+wins_diff,-0.019000000000000017,0.0392300904918661
+drtg_diff,-0.02400000000000003,0.05678027826631359

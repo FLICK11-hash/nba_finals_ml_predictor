@@ -1,0 +1,13 @@
+year,team_a,team_b,winner,model,actual_team_a_won,predicted_team_a_won,prob_team_a_wins,predicted_winner,split
+2006,Mavericks,Heat,Heat,logistic_regression,0,1,0.6781110887651437,Mavericks,1980-2005 -> 2006-2015
+2010,Lakers,Celtics,Lakers,logistic_regression,1,0,0.4330330552636029,Celtics,1980-2005 -> 2006-2015
+2011,Mavericks,Heat,Mavericks,logistic_regression,1,0,0.460746589669827,Heat,1980-2005 -> 2006-2015
+2006,Mavericks,Heat,Heat,random_forest,0,1,0.6633568065921003,Mavericks,1980-2005 -> 2006-2015
+2009,Lakers,Magic,Lakers,random_forest,1,0,0.4671018814518817,Magic,1980-2005 -> 2006-2015
+2011,Mavericks,Heat,Mavericks,random_forest,1,0,0.4971227772227774,Heat,1980-2005 -> 2006-2015
+2006,Mavericks,Heat,Heat,linear_svm,0,1,0.7796055222126579,Mavericks,1980-2005 -> 2006-2015
+2010,Lakers,Celtics,Lakers,linear_svm,1,0,0.4304664197555935,Celtics,1980-2005 -> 2006-2015
+2011,Mavericks,Heat,Mavericks,linear_svm,1,0,0.4191678967689157,Heat,1980-2005 -> 2006-2015
+2010,Lakers,Celtics,Lakers,rbf_svm,1,0,0.3839068267605128,Celtics,1980-2005 -> 2006-2015
+2011,Mavericks,Heat,Mavericks,rbf_svm,1,0,0.4027729266331528,Heat,1980-2005 -> 2006-2015
+2014,Spurs,Heat,Spurs,rbf_svm,1,0,0.44578042906776366,Heat,1980-2005 -> 2006-2015

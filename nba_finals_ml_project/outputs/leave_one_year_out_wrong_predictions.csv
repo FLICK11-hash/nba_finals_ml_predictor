@@ -1,0 +1,5 @@
+year,team_a,team_b,winner,model,actual_team_a_won,raw_predicted_team_a_won,final_predicted_team_a_won,prob_team_a_wins,dominance_override_used,predicted_winner,correct
+2001,Lakers,76ers,Lakers,logistic_regression,1,0,0,0.05939282318773928,False,76ers,0
+2001,Lakers,76ers,Lakers,linear_svm,1,0,0,0.0361205940735294,False,76ers,0
+2016,Warriors,Cavaliers,Cavaliers,logistic_regression,0,1,1,0.9592432911741803,True,Warriors,0
+2016,Warriors,Cavaliers,Cavaliers,linear_svm,0,1,1,0.9547230698303294,True,Warriors,0

@@ -1,0 +1,11 @@
+year,team_a,team_b,winner,model,actual_team_a_won,raw_predicted_team_a_won,final_predicted_team_a_won,prob_team_a_wins,dominance_override_used,predicted_winner
+2016,Warriors,Cavaliers,Cavaliers,logistic_regression,0,1,1,0.9704100270061616,True,Warriors
+2017,Warriors,Cavaliers,Warriors,logistic_regression,1,1,1,0.9990486855696269,True,Warriors
+2018,Warriors,Cavaliers,Warriors,logistic_regression,1,1,1,0.9941776178709072,True,Warriors
+2019,Warriors,Raptors,Raptors,logistic_regression,0,1,1,0.5013971639491378,False,Warriors
+2020,Lakers,Heat,Lakers,logistic_regression,1,1,1,0.99992846679238,False,Lakers
+2021,Suns,Bucks,Bucks,logistic_regression,0,0,0,0.29332437721583,False,Bucks
+2022,Warriors,Celtics,Warriors,logistic_regression,1,1,1,0.9883848501929613,False,Warriors
+2023,Nuggets,Heat,Nuggets,logistic_regression,1,1,1,0.9011531000328831,False,Nuggets
+2024,Mavericks,Celtics,Celtics,logistic_regression,0,0,0,0.004855018807618333,True,Celtics
+2025,Thunder,Pacers,Thunder,logistic_regression,1,1,1,0.9993401251216217,True,Thunder

@@ -1,0 +1,3 @@
+model,year,team_a,team_b,prob_team_a_wins,prob_team_b_wins,raw_predicted_winner,final_predicted_winner,dominance_override_used
+logistic_regression,2026,Spurs,Knicks,0.9871,0.0129,Spurs,Spurs,False
+linear_svm,2026,Spurs,Knicks,0.991,0.009,Spurs,Spurs,False

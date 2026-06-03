@@ -1,0 +1,3 @@
+model,correct,total,accuracy
+linear_svm,48,50,0.96
+logistic_regression,48,50,0.96

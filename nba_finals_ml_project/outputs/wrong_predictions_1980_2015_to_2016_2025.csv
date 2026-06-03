@@ -1,0 +1,7 @@
+year,team_a,team_b,winner,model,actual_team_a_won,predicted_team_a_won,prob_team_a_wins,predicted_winner,split
+2016,Warriors,Cavaliers,Cavaliers,logistic_regression,0,1,0.9772063550816209,Warriors,1980-2015 -> 2016-2025
+2016,Warriors,Cavaliers,Cavaliers,random_forest,0,1,0.7514885279214008,Warriors,1980-2015 -> 2016-2025
+2019,Warriors,Raptors,Raptors,random_forest,0,1,0.681502307195102,Warriors,1980-2015 -> 2016-2025
+2021,Suns,Bucks,Bucks,random_forest,0,1,0.6194705334704799,Suns,1980-2015 -> 2016-2025
+2016,Warriors,Cavaliers,Cavaliers,linear_svm,0,1,0.9177354531671069,Warriors,1980-2015 -> 2016-2025
+2016,Warriors,Cavaliers,Cavaliers,rbf_svm,0,1,0.8944086342637658,Warriors,1980-2015 -> 2016-2025

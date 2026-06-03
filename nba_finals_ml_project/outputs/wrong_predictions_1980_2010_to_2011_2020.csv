@@ -1,0 +1,13 @@
+year,team_a,team_b,winner,model,actual_team_a_won,predicted_team_a_won,prob_team_a_wins,predicted_winner,split
+2011,Mavericks,Heat,Mavericks,logistic_regression,1,0,0.40301852720440995,Heat,1980-2010 -> 2011-2020
+2014,Spurs,Heat,Spurs,logistic_regression,1,0,0.3180179298960503,Heat,1980-2010 -> 2011-2020
+2016,Warriors,Cavaliers,Cavaliers,logistic_regression,0,1,0.9717512955421568,Warriors,1980-2010 -> 2011-2020
+2011,Mavericks,Heat,Mavericks,random_forest,1,0,0.4372677918057174,Heat,1980-2010 -> 2011-2020
+2016,Warriors,Cavaliers,Cavaliers,random_forest,0,1,0.7122283372230443,Warriors,1980-2010 -> 2011-2020
+2019,Warriors,Raptors,Raptors,random_forest,0,1,0.6794966677916839,Warriors,1980-2010 -> 2011-2020
+2011,Mavericks,Heat,Mavericks,linear_svm,1,0,0.3961971289502851,Heat,1980-2010 -> 2011-2020
+2014,Spurs,Heat,Spurs,linear_svm,1,0,0.4186191761826743,Heat,1980-2010 -> 2011-2020
+2016,Warriors,Cavaliers,Cavaliers,linear_svm,0,1,0.8947189146469046,Warriors,1980-2010 -> 2011-2020
+2011,Mavericks,Heat,Mavericks,rbf_svm,1,0,0.35555332306624743,Heat,1980-2010 -> 2011-2020
+2014,Spurs,Heat,Spurs,rbf_svm,1,0,0.39127472305840094,Heat,1980-2010 -> 2011-2020
+2016,Warriors,Cavaliers,Cavaliers,rbf_svm,0,1,0.8943300636731699,Warriors,1980-2010 -> 2011-2020
